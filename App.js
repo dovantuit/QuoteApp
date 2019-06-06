@@ -26,6 +26,7 @@ function StyledButton(props) {
 export default class App extends Component {
   state = { index: 0, showNewQuoteScreen: false, quotes: [], isLoading: true };
 
+  // lấy dữ liệu từ Firebase database
   _retrieveData = async () => {
     let quotes = [];
     let query = await Firebase.db.collection('quotes').get();
@@ -39,11 +40,13 @@ export default class App extends Component {
     this.setState({ quotes, isLoading: false });
   };
 
+  // lưu dữ liệu vô Firebase database
   _saveQuoteToDB = async (text, author, quotes) => {
     docRef = await Firebase.db.collection('quotes').add({ text, author });
     quotes[quotes.length - 1].id = docRef.id;
   };
 
+  // xoá dữ liệu trên Firebase database
   _removeQuoteFromDB(id) {
     Firebase.db
       .collection('quotes')
@@ -51,6 +54,7 @@ export default class App extends Component {
       .delete();
   }
 
+  // thêm dữ liệu ở local database
   _addQuote = (text, author) => {
     let { quotes } = this.state;
     if (text && author) {

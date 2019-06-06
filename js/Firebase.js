@@ -1,6 +1,7 @@
 import firebase from 'firebase';
 import 'firebase/firestore';
 
+// chỗ này khai báo thông tin kết nối Firebase 
 const config = {
   
   // apiKey: 'AIzaSyA4KhjrlLQCGvE-_WowIWK89fBwaKBuafs',
