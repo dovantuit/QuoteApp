@@ -3,13 +3,13 @@ import 'firebase/firestore';
 
 const config = {
   
-  apiKey: 'AIzaSyA6tkgjtd0DNcgz89GMqbt98NqPKJScfC4',
-  authDomain: 'AUTHDOMAIN',
-  databaseURL: 'https://uhouse-2e259.firebaseio.com',
-  projectId: 'uhouse-2e259',
-  storageBucket: 'gs://uhouse-2e259.appspot.com',
-  messagingSenderId: 'MESSAGINGSENDERID',
-  appId: 'uhouse-2e259'
+  // apiKey: 'AIzaSyA4KhjrlLQCGvE-_WowIWK89fBwaKBuafs',
+  // authDomain: 'AUTHDOMAIN',
+  // databaseURL: 'https://quoteapp-e7710.firebaseio.com',
+  projectId: 'quoteapp-e7710',
+  // storageBucket: 'gs://quoteapp-e7710.appspot.com',
+  // messagingSenderId: 'MESSAGINGSENDERID',
+  // appId: 'uhouse-2e259'
 };
 
 export default class Firebase {

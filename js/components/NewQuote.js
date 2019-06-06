@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, StyleSheet, TextInput, View } from 'react-native';
+import { Button, Modal, StyleSheet, TextInput, View, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
 export default class NewQuote extends Component {
   state = { content: null, author: null };
@@ -16,28 +16,30 @@ export default class NewQuote extends Component {
         }}
         animationType="slide"
       >
-        <View style={styles.container}>
-          <TextInput
-            style={[styles.input, { height: 150 }]}
-            multiline={true}
-            placeholder="Input here dude!"
-            underlineColorAndroid="transparent"
-            onChangeText={text => this.setState({ content: text })}
-          />
-          <TextInput
-            style={styles.input}
-            placeholder="Author"
-            underlineColorAndroid="transparent"
-            onChangeText={text => this.setState({ author: text })}
-          />
-          <Button
-            title="Create"
-            onPress={() => {
-              this.setState({ content: null, author: null });
-              onSave(content, author);
-            }}
-          />
-        </View>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.container}>
+            <TextInput
+              style={[styles.input, { height: 150 }]}
+              multiline={true}
+              placeholder="Input here dude!"
+              underlineColorAndroid="transparent"
+              onChangeText={text => this.setState({ content: text })}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Author"
+              underlineColorAndroid="transparent"
+              onChangeText={text => this.setState({ author: text })}
+            />
+            <Button
+              title="Create"
+              onPress={() => {
+                this.setState({ content: null, author: null });
+                onSave(content, author);
+              }}
+            />
+          </View>
+        </TouchableWithoutFeedback>
       </Modal>
     );
   }
